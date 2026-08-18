@@ -46,6 +46,17 @@ ws://36.212.51.4:10002
 
 训练在本机双卡进行（RTX 2080 Ti 22G + RTX 4000 Ada 11.5G），检查点上传服务器即生效。
 
+## 依托的模型
+
+| 模型 | 类型 | 本项目角色 | 说明 |
+|---|---|---|---|
+| **ACT** | 动作分块 Transformer | 主力策略（当前提交） | 12 任务基线与本仓库训练成果 |
+| **RDT-1B** | 1B 扩散 VLA | 演进技术储备 | 双臂扩散基础模型，已部署验证，见 [RDT_1B/](RDT_1B/) |
+
+### ACT 检查点（训练结果）
+12 任务训练结果与检查点清单见 [results/](results/README.md)。检查点已部署至在线评测端点
+`ws://36.212.51.4:10002`，训练完成后将随 GitHub Releases 发布文件。
+
 ## 本仓库内容（贡献代码）
 
 | 路径 | 说明 | 相对上游的改动 |
@@ -55,6 +66,8 @@ ws://36.212.51.4:10002
 | `act/process_data.py` | RoboDojo 数据 → ACT 格式 | 图像逐帧 gzip 分块存储（磁盘占用降约 2/3） |
 | `act/train.sh` / `process_data.sh` | 训练 / 数据处理封装 | — |
 | `act/TASK_CONFIGS.json.sample` | 任务配置样例 | — |
+| `RDT_1B/` | RDT-1B 大规模 VLA 部署与验证记录 | 我们的部署说明 |
+| `results/` | 12 任务训练结果与检查点清单 | 训练完成后更新 |
 | `docs/` | 项目介绍 / 技术方案 / Demo 说明 / 部署与依赖 | — |
 
 > 本仓库基于开源 [XPolicyLab](https://github.com/XPolicyLab/XPolicyLab) 与
