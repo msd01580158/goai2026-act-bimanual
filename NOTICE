@@ -1,0 +1,25 @@
+NOTICE
+======
+
+This repository contains the competition contribution of team 百川汇海 (BaiChuan HuiHai)
+for GOAI 2026 · Embodied Future · Track 1: General Bimanual Manipulation Capability Test.
+
+Third-party notices:
+
+- XPolicyLab (Apache-2.0): https://github.com/XPolicyLab/XPolicyLab
+  The `act/model_multi_task.py`, `act/imitate_episodes.py`, and `act/process_data.py`
+  files are derived from XPolicyLab/policy/ACT with our modifications.
+  Modifications: multi-task `prepare_case` hot-switching hook (model.py),
+  best-validation-loss checkpoint saving (imitate_episodes.py),
+  per-frame gzip compression in data conversion (process_data.py).
+
+- RoboDojo (MIT, Copyright (c) 2025 Yue Chen): https://github.com/RoboDojo-Benchmark/RoboDojo
+  The evaluation server (robodojo.sh server / client) and the dataset used for
+  training are from RoboDojo.
+
+- ACT / DETR (MIT, Copyright (c) 2023 Tony Z. Zhao): https://tonyzhaozh.github.io/ACT/
+  The ACT model implementation is from the original ACT codebase.
+
+This repository does NOT redistribute the RoboDojo/XPolicyLab full source, the
+competition dataset, or trained checkpoints. Please obtain those from their
+respective upstream sources. See README.md for details.

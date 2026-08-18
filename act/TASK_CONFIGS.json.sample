@@ -1,0 +1,12 @@
+{
+    "RoboDojo-stack_bowls-arx_x5-joint": {
+        "dataset_dir": "processed_data/RoboDojo/stack_bowls/arx_x5-joint",
+        "num_episodes": 100,
+        "episode_len": 5000,
+        "camera_names": [
+            "cam_head",
+            "cam_right_wrist",
+            "cam_left_wrist"
+        ]
+    }
+}
