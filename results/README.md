@@ -1,30 +1,32 @@
 # 训练结果
 
-本目录记录 12 个任务的训练结果与检查点清单。检查点体积较大（~335MB/个），**不直接入库**，
-通过下方两种方式获取。
+12 个双臂任务的训练结果与检查点清单。检查点体积较大（~335MB/个），**不直接入库**，
+通过在线评测端点（部署到云端）获取，训练完成后随 GitHub Releases 发布文件。
 
-## 结果总览
+## 结果总览（更新于 2026-08-19）
 
-| 任务 | 训练批次 | 验证 loss | 最优 epoch | 检查点 | 状态 |
+| 任务 | 训练批次 | 验证 loss | 最优 epoch | 部署 | 状态 |
 |---|---|---|---|---|---|
-| stack_bowls | run1 | _待训练完成_ | _待填_ | _待填_ | 🔄 训练中 |
-| make_toast | run1 | _待训练完成_ | _待填_ | _待填_ | 🔄 训练中 |
-| arrange_largest_number | run1 | — | — | — | ⏳ 排队 |
-| fold_clothes | run1 | — | — | — | ⏳ 排队 |
-| hang_mugs | run1 | — | — | — | ⏳ 排队 |
-| pack_objects_into_box | run1 | — | — | — | ⏳ 排队 |
-| pour_liquid_into_cup | run1 | — | — | — | ⏳ 排队 |
+| stack_bowls | run1 | **0.1575** | 1859 | ✅ | ✅ 已上传 |
+| make_toast | run1 | **0.2045** | 1832 | ✅ | ✅ 已上传 |
+| arrange_largest_number | run1 | **0.0885** | 1821 | ✅ | ✅ 已上传 |
+| fold_clothes | run1 | **0.0525** | 1960 | ✅ | ✅ 已上传 |
+| hang_mugs | run1 | **0.1927** | 1340 | ✅ | ✅ 已上传 |
+| pack_objects_into_box | run1 | _训练中_ | — | — | 🔄 训练中 |
+| pour_liquid_into_cup | run1 | _训练中_ | — | — | 🔄 训练中 |
 | push_T | run1 | — | — | — | ⏳ 排队 |
 | sort_nesting_dolls_by_size | run1 | — | — | — | ⏳ 排队 |
 | stack_blocks | run1 | — | — | — | ⏳ 排队 |
 | store_laptop_and_headphones | run1 | — | — | — | ⏳ 排队 |
 | sweep_blocks | run1 | — | — | — | ⏳ 排队 |
 
+> 训练方法：ACT，2000 epochs，验证集筛选最优检查点（详见 `docs/02_技术方案.md` §5）。
+
 ## 检查点获取方式
 
 ### 方式 1：在线评测端点（推荐）
 
-训练完成后的策略检查点已部署到云端评测服务器，通过评测端点实时生效：
+训练完成的策略检查点已部署到云端评测服务器，通过评测端点实时生效：
 
 ```
 ws://36.212.51.4:10002
@@ -34,8 +36,8 @@ ws://36.212.51.4:10002
 
 ### 方式 2：检查点文件
 
-`policy_best.ckpt`（验证 loss 最优）+ `dataset_stats.pkl` 可打包为
-**GitHub Releases** 附件（~335MB/任务）。训练完成后随结果一起发布。
+`policy_best.ckpt`（验证 loss 最优）+ `dataset_stats.pkl` 将打包为 **GitHub Releases** 附件
+（~335MB/任务）。全部任务训练完成后随结果一起发布。
 
 ## 训练方法（可复现）
 
