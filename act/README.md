@@ -25,3 +25,8 @@ grep -n "policy_best" imitate_episodes.py
 # gzip 压缩（process_data.py）
 grep -n "compression\|chunks" process_data.py
 ```
+
+### `train_act_batch.py` / `watch_uploads.py`（批量训练驱动与上传兜底）
+
+- **`train_act_batch.py`**：12 任务双卡并行批量训练驱动——自动「转换→训练→上传→清理」循环，预转换线程消除 GPU 交接空转，SSH 检查带重试（详见 `docs/06_工程实践与部署经验.md`）。
+- **`watch_uploads.py`**：上传兜底 watcher——扫描"本地有检查点但服务器缺失"的任务自动补传（rsync 断点续传 + MD5 校验），上传成功同步演示页与结果清单。
