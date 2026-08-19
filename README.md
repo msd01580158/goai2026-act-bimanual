@@ -55,7 +55,10 @@ ws://36.212.51.4:10002
 
 ### ACT 检查点（训练结果）
 12 任务训练结果与检查点清单见 [results/](results/README.md)。检查点已部署至在线评测端点
-`ws://36.212.51.4:10002`，训练完成后将随 GitHub Releases 发布文件。
+`ws://36.212.51.4:10002`。
+
+**模型下载（ModelScope 魔塔）**：https://modelscope.cn/models/msd0158/goai2026-act-bimanual
+（12 任务 `policy_last.ckpt` + `dataset_stats.pkl`，SHA-256 见 [MODEL_SHA256SUMS](MODEL_SHA256SUMS)）
 
 ## 本仓库内容（贡献代码）
 
