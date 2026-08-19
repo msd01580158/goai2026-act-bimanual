@@ -28,6 +28,14 @@
 | SigLIP 视觉编码器 | `siglip/model.safetensors` | ~2G | |
 | RDT-1B 扩散主干 | `rdt-1b/pytorch_model.bin` | ~4G | |
 
+## 权重获取（ModelScope）
+
+> 权重共 **48G**，不直接放 GitHub，托管于 **魔塔社区（ModelScope）**，见：
+>
+> 🔗 **ModelScope 仓库：`（待上传后填写真实链接）`**
+>
+> 也可从 RDT-1B 官方渠道获取：`github.com/thu-ml/RDT` / HuggingFace。
+
 ## 环境（conda `rdt_1b`）
 
 - Python 3.10 / PyTorch 2.1 / CUDA 12

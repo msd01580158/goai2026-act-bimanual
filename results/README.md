@@ -40,10 +40,14 @@ ws://36.212.51.4:10002
 
 发送 `PREPARE_CASE(action_case_id="<task>_case")` 即加载对应任务的检查点。
 
-### 方式 2：检查点文件
+### 方式 2：检查点文件（ModelScope）
 
-`policy_best.ckpt`（验证 loss 最优）+ `dataset_stats.pkl` 将打包为 **GitHub Releases** 附件
-（~335MB/任务）。全部任务训练完成后随结果一起发布。
+`policy_best.ckpt`（验证 loss 最优）+ `dataset_stats.pkl`（~335MB/任务）将托管于
+**魔塔社区（ModelScope）**：
+
+> 🔗 **ModelScope 检查点仓库：`（待上传后填写真实链接）`**
+
+全部任务训练完成后统一发布。
 
 ## 训练方法（可复现）
 
