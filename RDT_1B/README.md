@@ -32,7 +32,7 @@
 
 > 权重共 **48G**，不直接放 GitHub，托管于 **魔塔社区（ModelScope）**，见：
 >
-> 🔗 **ModelScope 仓库：`（待上传后填写真实链接）`**
+> 🔗 **ModelScope 仓库：`https://modelscope.cn/models/msd0158/goai2026-act-bimanual`**
 >
 > 也可从 RDT-1B 官方渠道获取：`github.com/thu-ml/RDT` / HuggingFace。
 
