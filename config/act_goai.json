@@ -1,0 +1,39 @@
+{
+  "policy_name": "ACT",
+  "checkpoint": "checkpoints",
+  "config": "config/act_goai.json",
+  "action_type": "joint",
+  "action_dim": 14,
+  "env_cfg_type": "arx_x5",
+  "bench_name": "RoboDojo",
+  "run_name": "run1",
+  "camera_names": ["cam_head", "cam_right_wrist", "cam_left_wrist"],
+  "task_list": [
+    "arrange_largest_number",
+    "fold_clothes",
+    "hang_mugs",
+    "make_toast",
+    "pack_objects_into_box",
+    "pour_liquid_into_cup",
+    "push_T",
+    "sort_nesting_dolls_by_size",
+    "stack_blocks",
+    "stack_bowls",
+    "store_laptop_and_headphones",
+    "sweep_blocks"
+  ],
+  "model_params": {
+    "policy_class": "ACT",
+    "kl_weight": 10,
+    "chunk_size": 50,
+    "hidden_dim": 512,
+    "dim_feedforward": 3200,
+    "temporal_agg": true,
+    "backbone": "resnet18",
+    "enc_layers": 4,
+    "dec_layers": 7,
+    "nheads": 8,
+    "lr": 1e-5,
+    "seed": 0
+  }
+}

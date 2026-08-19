@@ -1,0 +1,20 @@
+bench_name: RoboDojo
+env_cfg_type: arx_x5
+action_type: joint
+dataset_type: hdf5
+dataset_root: /data/goai2026/data/hdf5
+camera_names: ["cam_head", "cam_left_wrist", "cam_right_wrist"]
+
+ckpt_dir: checkpoints/act_run01
+policy_class: ACT
+ckpt_setting: null
+batch_size: 8
+seed: 42
+num_epochs: 2000
+lr: 1e-4
+kl_weight: 10
+chunk_size: 10
+hidden_dim: 256
+save_freq: 100
+dim_feedforward: 512
+temporal_agg: true
