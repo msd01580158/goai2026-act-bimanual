@@ -66,3 +66,10 @@ arrange_largest_number、fold_clothes、hang_mugs、make_toast、pack_objects_in
   - RoboDojo：`https://github.com/RoboDojo-Benchmark/RoboDojo`
   - XPolicyLab：`https://github.com/XPolicyLab/XPolicyLab`
 - 评测服务与本方案文档由本项目团队维护。
+
+---
+
+## 开源仓库
+
+本项目贡献代码与文档开源在：**https://github.com/msd01580158/goai2026-act-bimanual**（Apache-2.0）
+
