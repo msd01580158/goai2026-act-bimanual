@@ -14,6 +14,7 @@ ws://36.212.51.4:10002
 - **传输协议**：WebSocket + msgpack 二进制帧。
 - **消息类型**（`MessageType`）：`PREPARE_CASE`、观测（`OBS`）、动作（`ACTION`）等。
 - **机器人/动作类型**：arx_x5 双臂机器人，关节（`joint`）动作，14 维。
+- **Batch 推理**：支持一次提交多个环境观测、返回多组动作（`update_obs_batch` / `get_action_batch`），适配并行评测。
 
 ## 使用流程
 

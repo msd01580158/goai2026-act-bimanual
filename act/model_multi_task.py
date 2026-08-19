@@ -80,6 +80,17 @@ class Model(ModelTemplate):
         action_list = unpack_robot_state(actions, self.action_type, self.robot_action_dim_info, source_type="obs")
         return action_list
 
+    def update_obs_batch(self, obs_list):
+        """Batch inference: encode a list of N observations (one per env) → policy batch update."""
+        encoded = [self.encode_obs(o, self.action_type, self.robot_action_dim_info) for o in obs_list]
+        self.model.update_obs_batch(encoded)
+
+    def get_action_batch(self):
+        """Batch inference: one forward pass → N actions (one per env)."""
+        actions_batch = self.model.get_action_batch()
+        return [unpack_robot_state(a, self.action_type, self.robot_action_dim_info, source_type="obs")
+                for a in actions_batch]
+
     def reset(self):
         if self.model.temporal_agg:
             self.model.all_time_actions = torch.zeros([
@@ -90,6 +101,8 @@ class Model(ModelTemplate):
             self.model.t = 0
         else:
             self.model.t = 0
+        if hasattr(self.model, "reset_batch"):
+            self.model.reset_batch()
 
     def encode_obs(self, observation, action_type, robot_action_dim_info):
         res_dict = dict()
